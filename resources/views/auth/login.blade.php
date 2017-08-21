@@ -38,6 +38,15 @@
                             </div>
                         </div>
 
+                        <div class="col-md-6 col-md-offset-4">
+                            <div class="text-center">--OR--</div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-6"><a href="/login/facebook" class="btn btn-default btn-block">Facebook</a></div>
+                                <div class="col-md-6"><a href="/login/github" class="btn btn-default btn-block">GitHub</a></div>
+                            </div>
+                            <br>
+                        </div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
