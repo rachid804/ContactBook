@@ -74,7 +74,15 @@
         @yield('content')
     </div>
 
+    <div class="alert alert-dismissible hidden" role="alert" id="alert_template">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <ul>
+
+        </ul>
+    </div>
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    @yield('js')
 </body>
 </html>

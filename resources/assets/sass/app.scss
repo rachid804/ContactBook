@@ -1,9 +1,36 @@
-
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
 // Variables
 @import "variables";
-
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+.customFields {
+
+  .customFieldsLabel {
+    background: rgba(204, 204, 204, 0.35);
+    padding: 5px;
+    line-height: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .line {
+    input {
+      border-radius: 0;
+    }
+    .fieldName, .fieldValue, .lineAction {
+      border-bottom: 10px solid #ffffff;
+    }
+    .fieldName,.fieldValue {
+      padding-right: 5px;
+    }
+
+    .fieldValue {
+    }
+    .lineAction {
+      padding-left: 0;
+      text-align: center;
+    }
+  }
+}
