@@ -40,4 +40,9 @@ class User extends Authenticatable
     {
         return (bool) $this->userSocialServices->where('service', $service)->count();
     }
+
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
+    }
 }
