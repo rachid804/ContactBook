@@ -44,5 +44,9 @@ return [
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
         'redirect' => env('GITHUB_REDIRECT_URL'),
     ],
+    'activeCampaign' => [
+        'url' => env('ACTIVE_CAMPAIGN_URL'),
+        'key' => env('ACTIVE_CAMPAIGN_API_KEY')
+    ],
 
 ];
