@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'ContactsController@index')
+    ->middleware('auth')
+    ->name('contacts.index') ;
+
+Route::resource('/contacts', 'ContactsController');
 
 //Social Auth routes
 Route::get('login/{service}', 'Auth\SocialLoginController@redirect');
