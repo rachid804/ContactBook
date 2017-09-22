@@ -12,13 +12,19 @@
 */
 
 Auth::routes();
-
-Route::get('/', 'ContactsController@index')
-    ->middleware('auth')
-    ->name('contacts.index') ;
-
-Route::resource('/contacts', 'ContactsController');
-
 //Social Auth routes
 Route::get('login/{service}', 'Auth\SocialLoginController@redirect');
 Route::get('login/{service}/callback', 'Auth\SocialLoginController@callback');
+
+//Guarded routes
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/', 'ContactsController@index')
+        ->name('contacts.index') ;
+
+    Route::get('/contacts/search', 'ContactsController@search')->name('contacts.search');
+    Route::resource('/contacts', 'ContactsController');
+
+});
+
+
