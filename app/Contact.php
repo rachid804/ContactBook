@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
+    protected $fillable = ['name' ,'surname', 'email', 'phone', 'custom_fields'];
+
     public function user(){
         return $this->belongsTo(User::class);
     }
@@ -33,6 +35,5 @@ class Contact extends Model
     {
         return json_decode($customFields);
     }
-
 
 }
