@@ -9,9 +9,10 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
-class UpdateActiveCampaign implements ShouldQueue
+class UnsubscribeContact implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
     /**
      * @var Contact
      */
@@ -27,6 +28,7 @@ class UpdateActiveCampaign implements ShouldQueue
         $this->contact = $contact;
     }
 
+
     /**
      * Execute the job.
      * @return void
@@ -34,7 +36,6 @@ class UpdateActiveCampaign implements ShouldQueue
      */
     public function handle()
     {
-
         $ac = app('ActiveCampaign');
 
         $list_id = 1;
@@ -43,7 +44,7 @@ class UpdateActiveCampaign implements ShouldQueue
             'first_name' => $this->contact['name'],
             'last_name' => $this->contact['surname'],
             "p[{$list_id}]"      => $list_id,
-            "status[{$list_id}]" => 1,
+            "status[{$list_id}]" => 2,
         );
 
         //Update or Add contact to ActiveCampaign

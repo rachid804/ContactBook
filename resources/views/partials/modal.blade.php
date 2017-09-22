@@ -1,11 +1,11 @@
 <!-- Modal -->
-<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">New Contact</h4>
+                <h4 class="modal-title" id="contactModalLabel">New Contact</h4>
             </div>
             <form id="contactsFormIndex" action="{{ route('contacts.store') }}" method="post">
                 {{ csrf_field() }}
@@ -28,11 +28,11 @@
 
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input name="phone" type="phone" class="form-control" id="phone" placeholder="Phone">
+                        <input name="phone" type="tel" class="form-control" id="phone" placeholder="Phone">
                     </div>
 
                     <div class="customFields">
-                        <div class="customFieldsLabel">
+                        <div class="customFieldsLabel clearfix">
                             Custom fields
                             <button class="btn btn-primary btn-sm pull-right" title="Add new custom field"
                                     id="newCustomField">+
@@ -42,10 +42,12 @@
 
                     </div>
 
-
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Save contact</button>
+                    <button type="submit" class="btn btn-success">
+                        <span>Save contact</span>
+                        <i class="fa fa-spinner fa-spin hidden " aria-hidden="true"></i>
+                    </button>
                 </div>
             </form>
 
@@ -54,7 +56,7 @@
 </div>
 
 
-<!-- Template for adding new customfield -->
+<!-- Template for adding new custom field -->
 <div class="form-group row line hide" id="customFieldTemplate">
     <div class="col-xs-4 fieldName">
         <input type="text" class="form-control" name="fieldName" placeholder="Field Name"/>

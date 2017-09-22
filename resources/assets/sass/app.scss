@@ -4,6 +4,9 @@
 @import "variables";
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+//toastr
+@import "node_modules/toastr/nuget/content/content/toastr.scss";
+@import "node_modules/font-awesome-sass/assets/stylesheets/font-awesome";
 
 .customFields {
 
